@@ -1,5 +1,6 @@
 """
-Operadores Aritméticos em Python são usados para realizar operações matemáticas básicas, como adição, subtração, multiplicação e divisão. Eles são fundamentais para manipular números e realizar cálculos em programas Python.
+Operadores Aritméticos em Python são usados para realizar operações matemáticas básicas, como adição, subtração, multiplicação e divisão.
+Eles são fundamentais para manipular números e realizar cálculos em programas Python.
 
 """
 

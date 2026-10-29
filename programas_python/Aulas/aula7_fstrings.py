@@ -1,4 +1,5 @@
-# fstrings são uma forma moderna e eficiente de formatar strings em Python, introduzidas na versão 3.6. Elas permitem incorporar expressões dentro de strings, facilitando a criação de mensagens dinâmicas e legíveis.
+# fstrings são uma forma moderna e eficiente de formatar strings em Python, introduzidas na versão 3.6.
+# Elas permitem incorporar expressões dentro de strings, facilitando a criação de mensagens dinâmicas e legíveis.
 nome = 'Rafael'
 altura = 1.75
 peso = 59.5
@@ -19,8 +20,8 @@ print(f'Valor de pi com 4 casas decimais: {pi:.4f}')
 # e .2f ou .4f indicam que o número deve ser formatado como um float com 2 ou 4 casas decimais, respectivamente.
 
 # Exemplo de alinhamento de texto com fstrings:
-print(f'{"Nome":<10} {"Idade":<5} {"Cidade":<15}')
-print(f'{nome:<10} {30:<5} {"São Paulo":<15}')
+print(f'{"Nome":^10} {"Idade":<5} {"Cidade":<15}')
+print(f'{nome:^10} {30:^5} {"São Paulo":<15}')
 
 # Exemplo de chamada de função dentro de fstrings:
 def saudacao(nome):
@@ -35,3 +36,33 @@ print('%s tem %.2f de altura e pesa %.2f kg.' % (nome, altura, peso)) #mesmo est
 
 # Usando o método str.format()
 print('{} tem {:.2f} de altura e pesa {:.2f} kg.'.format(nome, altura, peso))
+
+#formatando numeros
+#a virgula separa a casa maior com virgula.
+#o sinal negativo força o sinal negativo a aparecer quando o número for negativo.
+print(f'{1000000.238128937198:-,.1f}')
+#preencher com zeros à esquerda.
+print(f'{-1000000.238128937198:0=-15,.1f}')
+
+# !s -> str() -> converte o objeto usando a função padrão str().
+texto = "Python"
+# Usando !s (str) - exibe o texto normalmente
+print(f"{texto!s}")  # Saída: Python
+# Usando !r (repr) - exibe o texto com aspas de representação interna (pega o objeto técnico)
+print(f"{texto!r}")  # Saída: 'Python'
+
+import datetime
+
+agora = datetime.datetime.now()
+
+print(f"Normal: {agora!s}")  # Saída exibe data/hora legível: 2026-10-29 04:09:00
+print(f"Repr:   {agora!r}")  # Saída exibe o objeto técnico: datetime.datetime(2026, 10, 29, 4, 9, 0, ...)
+
+#usando !a
+mensagem = "Olá, 🌍! Café?"
+
+# Usando o comportamento normal (!s)
+print(f"Normal: {mensagem!s}")
+
+# Usando a conversion flag !a (ascii)
+print(f"ASCII:  {mensagem!a}")

@@ -8,3 +8,14 @@ idade = int(input('Digite sua idade: '))  # Converte a entrada para inteiro
 print('Você tem', idade, 'anos.')
 
 #note que a função input sempre retorna uma string, por isso a necessidade de converter para int no caso da idade.
+
+#AQUI, solução para solucionar erros quando a entrada for diferente do tipo da variável.
+
+while True:
+    try:
+        idade = int(input('Digite sua idade: '))
+        break;
+    except ValueError:
+        print("Erro: Por favor, digite um número inteiro.")
+
+print('Você tem', idade, 'anos.')

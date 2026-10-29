@@ -9,7 +9,9 @@ print(*objects, sep=' ', end='\n', file=None, flush=False)
 2. sep: é o separador entre os objetos, por padrão é um espaço.
 3. end: é o que será impresso no final, por padrão é uma quebra de linha.
 4. file: é onde a saída será direcionada, por padrão é a tela/terminal.
-5. flush: se True, força a saída imediata dos dados.
+5. flush: se True, força a saída imediata dos dados. ---> Serve para esvaziar a saída de dados em momentos que exigem que a gravação e a exibição seja instantanea. Com o Flush=False, isso é feito de forma automática, o dado fica em um Buffer, e aparece na tela ou é gravado somente em momentos especificos (quando o buffer enche, quando o programa é encerrado, quando encontra uma quebra de linha...)
+Isso acontece porque o Python adota uma postura de espera e eficiência. -> melhoras do desempenho e otimização.
+Sempre que o Python precisar lidar com memória intermediária (buffer) para otimizar desempenho ao gravar em telas, arquivos ou conexões, o conceito de flush vai aparecer.
 
 """
 
@@ -27,3 +29,12 @@ Dentro do print, podemos usar operações matemáticas, concatenação de string
 print(12 + 34)
 print("O resultado é:", 10 + 10)
 print("Olá, " + "mundo!")
+
+#Testando Flush Flase e True
+
+import time
+
+for i in range(5, 0, -1):
+    print(i, end="...", flush=True)
+    time.sleep(1)
+print("Fogo!")
