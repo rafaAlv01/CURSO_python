@@ -24,3 +24,10 @@ try: #o try/except funciona pra diversas situações, diversos erros. Por exempl
 except: #Esse except pega qualquer erro que surgir entre as linhas 19 e 23. Se o usuário apertar Ctrl + C, o programa não será encerrado, pois o erro KeyboardInterrupt seria capturado.
         #Para evitar isso, é importante especificar o tipo de erro. Ex: except ValueError:
     print('Isso não é um número.')
+
+
+try:
+    ...
+except Exception as error: #Pega a variável do erro para ver qual erro deu.
+    print(error)
+    ...
