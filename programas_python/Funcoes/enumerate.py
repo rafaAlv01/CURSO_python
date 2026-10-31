@@ -32,3 +32,15 @@ for item in enumerate(lista):
     print('FOR da tupla:')
     for valor in item:
         print(f'\t{valor}')
+
+'''
+    EXERCÍCIO:
+        multiplique cada um dos valores por uma contagem regressiva começando de 10. Cria uma lista com os resultados.
+        lista = [7, 2, 3, 4, 9]
+'''
+lista_exerc = [7, 2, 3, 4, 9]
+other_list_exerc = []
+for indice, num in enumerate(lista_exerc, -10):
+    other_list_exerc.append(num*-indice) #7*-(-10) , 2*-(-9), ...
+
+print('Resultado do exercicio:', other_list_exerc)

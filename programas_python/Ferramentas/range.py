@@ -11,6 +11,8 @@ Isso evita o consumo excessivo de memória RAM ao trabalhar com sequências de m
 Para visualizar os valores internos de um iterável como o range, existem duas abordagens:
 1. laço for: o laço for solicita um elemento por vez ao iterável e o imprime.
 2. Conversão explicita para list ou tuple: A função list() força a geração de todos os valores do iterável de uma só vez e os armazena em uma lista.
+
+É POSSÍVEL MANIPULAR O range() DIRETAMENTE CRIANDO O OBJETO ATRAVÉS DO CONSTRUTOR __int__() ---> exemplo no final da seção.
 '''
 
 #ta dizendo que quer numeros de 0 a 10
@@ -31,6 +33,9 @@ for numero in range(5):
 numeros = list(range(10))
 print(numeros)
 
+#AQUI O RANGE consome do maior para o menor. BASTA USAR PASSOS NEGATIVOS.
+numeros = list(range(10, 2, -1))
+print(numeros)
 """
 Usos para range fora do for ou list:
 """
@@ -46,9 +51,9 @@ if 45 in range(0, 100, 5):
 
 #Acesso direto por índice e Fatiamento
 r = range(10, 100, 2)
-print(r[0]) # Retorna 10 (primeiro elemento) [10]
-print(r[-1]) # Retorna 98 (último elemento) [10]
-print(r[2:5]) # Retorna outro objeto range: range(14, 20, 2) [2, 10]
+print(r[0]) # Retorna 10 (primeiro elemento)
+print(r[-1]) # Retorna 98 (último elemento)
+print(r[2:5]) # Retorna outro objeto range: range(14, 20, 2)
 
 #Consulta de tamanho com len()
 total = len(range(0, 1000000, 3))
@@ -58,3 +63,17 @@ print(total) # Retorna 333334 instantaneamente
 r = range(10, 50, 5)
 print(r.index(25)) # Retorna 3 (índice do número 25)
 print(min(range(5, 20))) # Retorna 5
+
+"""
+    MANIPULANDO DIRETAMENTE NO INTERATOR
+"""
+
+#Percorre uma lista e multiplica cada elemento por uma sequencia decrescente começando pelo 10.
+
+lista = [7, 2, 3, 4, 9]
+resultado = []
+indices = range(10, 1, -1).__iter__()
+for num in lista :
+    resultado.append(num*next(indices))
+
+print(f'Resultado teste com __iter__():', resultado)

@@ -30,3 +30,13 @@ meu_iterador = texto.__iter__() # ou iter(texto)
 print(next(meu_iterador)) # Saída: 'R'
 print(next(meu_iterador)) # Saída: 'a'
 print(next(meu_iterador)) # Saída: 'f'
+
+#OUTRA SIMULAÇÃO: percorre uma lista e multiplica cada elemento por uma sequencia decrescente começando pelo 10.
+
+lista = [7, 2, 3, 4, 9]
+resultado = []
+indices = range(10, 1, -1).__iter__()
+for num in lista :
+    resultado.append(num*next(indices))
+
+print(f'Resultado teste com __iter__():', resultado)

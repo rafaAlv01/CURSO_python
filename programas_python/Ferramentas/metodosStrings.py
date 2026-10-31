@@ -44,3 +44,6 @@ inicio (opcional): O índice a partir do qual a busca deve começar. O padrão �
 fim (opcional): O índice onde a busca deve parar. O padrão é o final da lista.
 """
 print(frase.index('o', 2))
+
+# .replace() -> troca um caractere por outro.
+print(frase.replace('!', '.').replace('á', 'a'))
