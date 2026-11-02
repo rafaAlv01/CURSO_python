@@ -36,7 +36,9 @@ print(next(meu_iterador)) # Saída: 'f'
 lista = [7, 2, 3, 4, 9]
 resultado = []
 indices = range(10, 1, -1).__iter__()
+
 for num in lista :
     resultado.append(num*next(indices))
 
 print(f'Resultado teste com __iter__():', resultado)
+
