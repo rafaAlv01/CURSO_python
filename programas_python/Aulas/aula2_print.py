@@ -13,6 +13,8 @@ print(*objects, sep=' ', end='\n', file=None, flush=False)
 Isso acontece porque o Python adota uma postura de espera e eficiência. -> melhoras do desempenho e otimização.
 Sempre que o Python precisar lidar com memória intermediária (buffer) para otimizar desempenho ao gravar em telas, arquivos ou conexões, o conceito de flush vai aparecer.
 
+Se o print imprimir o retorno de várias funções, ele só imprime quando todas as funções forem chamadas. EXEMPLO na aula21.
+
 """
 
 # a virgula é o separador de objetos. Ela adiciona um espaço.
