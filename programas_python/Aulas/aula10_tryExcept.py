@@ -26,8 +26,10 @@ except: #Esse except pega qualquer erro que surgir entre as linhas 19 e 23. Se o
     print('Isso não é um número.')
 
 
+#BOA PRÁTICA DE PROGRAMAÇÃO: ESPECIFICAR O ERRO PARA RETORNAR O QUE CAUSOU O ERRO.
+print('\n', 'Especificando o erro', sep='')
+dicionario_vazio = dict()
 try:
-    ...
-except Exception as error: #Pega a variável do erro para ver qual erro deu.
-    print(error)
-    ...
+    print(dicionario_vazio['curso'])
+except Exception as e:
+    print(f'O erro dado foi porque a seguinte chave não existe no dicionário: {e}')

@@ -18,7 +18,7 @@
 #DECLARAÇÕES
 
 tupla_vazia = tuple()
-tupla_vazia2 = ()
+tupla_vazia2 = (), #colocar a virgula porque só tem um item na tupla
 ponto = (10, 20)
 dado = ('Rafael', 25, 10000)
 tupla_unica = (10,) #aqui é uma tupla de um elemento
