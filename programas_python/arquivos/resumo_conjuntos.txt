@@ -1,0 +1,17 @@
+RESUMO CONJUNTOS:
+
+        -> agrupamentos de elementos com uma caracteristica em comum, elementos não se repetem.
+        -> conjuntos organizam informações e são base para lógica, probabilidade e estatística.
+
+        representação:
+            -> enumeração: lista dos elementos A = {a, e, i, o, u}
+            -> propriedade característica: A = {x | x é par menor que 10}.
+        relações fundamentais:
+            -> pertinencia(2 pertence a PAR), inclusao(PAR está contido em NUMEROS), subconjunto(PAR é um subconjunto de NUMEROS)
+        tipos de conjuntos:
+            -> vazio, unitário, finito/infinito, universo(contem todos os elementos do contexto)
+        OPERAÇÕES:
+            -> união(elementos que estão em A ou B)
+            -> interseção(elementos comuns a A e B)
+            -> diferença(elementos de A que não estao em B)
+            -> complementar(elementos do universo que não pertencem ao conjunto)
