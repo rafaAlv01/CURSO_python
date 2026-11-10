@@ -34,6 +34,10 @@ DEBUGGER
 
     CURIOSIDADE: Ferramentas de depuração via linha de comando, como o módulo nativo pdb, permitem iniciar o debugger no modo pós-morte (pdb.pm()) logo após um travamento. Com o comando w (where), o pdb exibe o traceback da pilha e permite navegar por cada frame para inspecionar as variáveis que causaram o erro.
 
+    MÉTODOS QUE PODEM SER USADOS NO MODO INTERATIVO DO DEBUGGER:
+        -> digite a variável que deseja ver.
+        -> digite: dir(string) -> isso vai mostrar todos os atributos definidos dentro da string. Há outros métodos, como hasattr, getattr e etc.
+
 
 DOCUMENTAÇÃO PYTHON:
 https://docs.python.org/pt-br/3.16/builtins/stdtypes.html
@@ -49,3 +53,14 @@ python -u (unbuffered -> o codrunning diz para jogar tudo na tela, sem salvar no
 python -m mod (lib mod como script -> executa uma biblioteca do python como script)
 python -c 'cmd' (executa um comando no terminal)
 python -i mod.py (interativo com mod -> traz toda a saída do módulo e logo em seguida é possível interagir com o código.)
+
+FILOSOFIAS DE BOAS PRATICAS DE PROGRAMAÇÃO:
+
+EAFP(Easier to Ask Forgiveness than Permission)
+    "É mais fácil pedir perdão do que permissão."
+    Essa é a filosofia oficial do Python. Em vez de verificar o tipo ou o estado de um objeto antes de fazer alguma operação (o que seria "pedir permissão"), você simplesmente executa a operação e, se algo der errado, você trata o erro no except ("pede perdão").
+    Se a exceção for rara, o código roda mais rápido porque evita checagens desnecessárias a cada ciclo.
+
+LBYL(Look Before You Leap)
+    "Olhe antes de pular."
+    Essa é a abordagem tradicional de linguagens como C ou Java. Você faz checagens preventivas (if, isinstance(), hasattr()) para garantir que tudo é seguro antes de executar a ação.
