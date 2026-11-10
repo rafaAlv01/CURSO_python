@@ -65,7 +65,7 @@ print(r.index(25)) # Retorna 3 (índice do número 25)
 print(min(range(5, 20))) # Retorna 5
 
 """
-    MANIPULANDO DIRETAMENTE NO INTERATOR
+    MANIPULANDO DIRETAMENTE NO ITERATOR
 """
 
 #Percorre uma lista e multiplica cada elemento por uma sequencia decrescente começando pelo 10.

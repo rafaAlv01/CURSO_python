@@ -12,7 +12,7 @@
         1. calcular o menor valor de uma coleção
         2. verificar se existe algum valor verdadeiro
         3. construções de sequencias Não-Lista(tuple, set, array, etc)
-        4.Pipeline de Processamento de Dados (Arquivos e Logs)
+        4. Pipeline de Processamento de Dados (Arquivos e Logs)
 """
 import array
 
@@ -40,3 +40,10 @@ linhas_limpas = (linha.strip() for linha in open(caminho_poema, 'r', encoding='u
 
 for linha in linhas_limpas:
     print(linha)
+print()
+
+#CAPTURANDO VARIAVEIS COM LAMBDAS --> EXPLICAÇÃO MAIS DETALHADA NA aula27_lambda.py
+funcs = [lambda x: x + n for n in range(5)] #As variáveis externas usadas dentro de uma expressão lambda são ligadas em tempo de execução (runtime), e não no momento de sua definição. Isso pode gerar comportamentos inesperados ao criar lambdas dentro de laços de repetição, como observado ao lado.
+print([f(0) for f in funcs])
+funcs = [lambda x, n=n: x + n for n in range(5)]
+print([f(0) for f in funcs])
