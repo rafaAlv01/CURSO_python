@@ -1,11 +1,14 @@
 """
-    Listas em Python
+Listas em Python
 
     DADOS MUTÁVEIS exigem cuidado.
     
     OBS: MOVER ITENS NA LISTA EXIGE MUITO PROCESSAMENTO SE FOR UMA LISTA GRANDE.
 
     del, append, pop, insert, extend, copy,
+
+    NÃO É RECOMENDÁVEL CRIAR LISTAS COM VÁRIOS TIPOS DE DADOS. O IDEAL É TENTAR MANTER O MESMO PADRÃO DE TIPOS, pois permite que determinadas operações, como o SOLID, sejam feitas de forma mais direta.
+    Se tiver varios tipos e for mexer com SOLID, vai precisar colocar um if toda vez que for mexer na lista, para verificar o tipo.
 """
 
 lista = []

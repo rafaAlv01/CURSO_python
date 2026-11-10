@@ -7,6 +7,9 @@ DICIONÁRIO (tipo dict)
     Dicionários são estruturas de dados do tipo par de "chave" e "valor":
         Chaves podem ser consideradas "índices" que vimos na lista e podem ser de tipos imutáveis(str, int, float, bool, tuple, etc).
         Valor pode ser qualquer tipo, incluindo outro dicionário.
+        É possível converter uma lista em dicionário desde que ela siga o padrão key:value.
+            lista = [(1, 'Rafael'),(2, 'Maria'),(3, 'José')]
+            dicionario = dict(lista)
 
     LISTA X DICIONÁRIO
         1. Ao contrário das listas que utilizam indices numéricos inteiros sequenciais, os dicionários utilizam chaves de diversos tipos de dados imutáveis para mapear e localizar valores associados.
@@ -19,8 +22,8 @@ DICIONÁRIO (tipo dict)
         tipos mutáveis: dict, lista, etc.
     
     sintaxe:
-        dicionario['chave'] => valor (retorna o valor)
-
+        dicionario['chave'] => valor (retorna o valor) 
+    
     OPERAÇÕES FUNDAMENTAIS E MÉTODOS NATIVOS
         1. Acesso Seguro e Tratamento de Erros (KeyError vc .get): Tentar acessar uma chave que não existe via colchetes gera a exceção KeyError. O método .get(chave, valor) evita o erro retornando um valor alternativo, ZERO, caso a chave não seja encontrada.
         2. Adição e Alternancia de Elementos: A atribuição dict[chave] = valor atualiza o valor se a chave já existir ou cria um novo par chave-valor caso não exista.

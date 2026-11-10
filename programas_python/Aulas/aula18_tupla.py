@@ -3,6 +3,8 @@
 
     O MÉTODO tuple() converte outro iteravel em tuplas.
 
+    PERMITE INSERIR DOIS OU MAIS VALORES EM LUGARES QUE NORMALMETE ACEITAM UM UNICO VALOR (Exemplo: uma posição de uma lista.).
+
     A tupla promove:
         1. Proteção de Dados: após a criação, seus elementos não podem ser alterados, adicionados ou removidos. Garante a INTEGRIDADE.
         2. Desempenho: por ser imutáveis, o interpretador Python consegue aplicar otimizações internas.
