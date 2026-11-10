@@ -11,7 +11,7 @@
     * - *args (empacotamento e desempacotamento)
         1. *args é uma convenção de escrita utilizada para representar argumentos não nomeados. Lembre-se: A expressão *args pega uma sequencia de argumentos e empacota em args.
         2. Funções empacotam tudos os argumentos em uma tupla. Não é possível alterar os valores de uma tupla, mas é possível transformar essa tupla em lista ter mais liberdade de modificação.
-
+        3. **kwargs (usando dois asteriscos) é uma convenção de escrita utilizada para representar argumentos NOMEADOS.
 
     O que funções podem retornar (o que return aceita) :
         1. Tipos básicos e primitivos (int, float, str, booleanos)
@@ -72,13 +72,25 @@ print(f'Imprimindo a função soma: {soma}', f'O que a função soma retorna: {r
 print(f'Soma com retorno especificado: {resultado_2}')
 
 resultado_3 = soma_varios_args(2, 2, 2, 2, 2)
-print(f'Retorno da função soma_varios_args : {resultado_3}')
+print(f'Retorno da função soma_varios_args não nomeados: {resultado_3}')
 
 tupla = (3, 4, 5, 6, 7)
 resultado_4 = soma_varios_args(*tupla)
 print(f'Retorno da função soma_varios_args desempacotando uma tupla nos argumentos de chamada : {resultado_4}')
 
 print(f'Retorno usando a função build-in sum : {sum((5, 5, 5, 5, 5))}') #SUM recebe um iteravel.
+
+print()
+print('ABAIXO o resultado de uma função que retorna, separados, argumentos NOMEADOS e NÃO NOMEADOS:')
+def mostra_arg_nomeados(*args, **kwargs):
+    print('Não nomeados: ', args)
+
+    print('Nomeados(**kwargs): ', end=' ')
+    for chave, valor in kwargs.items():
+        print(chave, valor, end=' , ')
+
+mostra_arg_nomeados(1, 2, nome='Maria', qlq=123)
+print('\n')
 
 #EXEMPLOS COM FUNCOES QUE RETORNAM OUTRAS FUNCOES E CHAMAVEIS
 """
