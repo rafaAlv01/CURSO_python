@@ -1,3 +1,7 @@
+"""
+CALCULADORA BÁSICA
+"""
+
 #Calculadora usando While
 
 start_calc = input('Deseja realizar um cálculo? Digite \'sim\' para continuar.')

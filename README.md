@@ -64,3 +64,6 @@ EAFP(Easier to Ask Forgiveness than Permission)
 LBYL(Look Before You Leap)
     "Olhe antes de pular."
     Essa é a abordagem tradicional de linguagens como C ou Java. Você faz checagens preventivas (if, isinstance(), hasattr()) para garantir que tudo é seguro antes de executar a ação.
+
+PROGRAMAS CRIADOS
+    O ideal é que o executavel (__main__) fique na pasta raiz do projeto, para, a partir dele, o Python conseguir localizar todas os módulos criados no projeto. Isso minimiza problemas envolvendo o path.
