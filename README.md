@@ -39,31 +39,31 @@ DEBUGGER
         -> digite: dir(string) -> isso vai mostrar todos os atributos definidos dentro da string. Há outros métodos, como hasattr, getattr e etc.
 
 
-DOCUMENTAÇÃO PYTHON:
-https://docs.python.org/pt-br/3.16/builtins/stdtypes.html
+DOCUMENTAÇÃO PYTHON
+    https://docs.python.org/pt-br/3.16/builtins/stdtypes.html
 
 AMBIENTE VIRTUAL (venv)
-É como se fosse uma bolha para cada projeto.
-python -m venv nome_ambiente_virtual -> comando básico para criar um ambiente virtual. Vai executar o modulo venv como script.
+    É como se fosse uma bolha para cada projeto.
+    python -m venv nome_ambiente_virtual -> comando básico para criar um ambiente virtual. Vai executar o modulo venv como script.
 
 SOBRE O INTERPRETADOR DO PYTHON
 
-python mod.py (executa o modulo)
-python -u (unbuffered -> o codrunning diz para jogar tudo na tela, sem salvar no buffer)
-python -m mod (lib mod como script -> executa uma biblioteca do python como script)
-python -c 'cmd' (executa um comando no terminal)
-python -i mod.py (interativo com mod -> traz toda a saída do módulo e logo em seguida é possível interagir com o código.)
+    python mod.py (executa o modulo)
+    python -u (unbuffered -> o codrunning diz para jogar tudo na tela, sem salvar no buffer)
+    python -m mod (lib mod como script -> executa uma biblioteca do python como script)
+    python -c 'cmd' (executa um comando no terminal)
+    python -i mod.py (interativo com mod -> traz toda a saída do módulo e logo em seguida é possível interagir com o código.)
 
-FILOSOFIAS DE BOAS PRATICAS DE PROGRAMAÇÃO:
+FILOSOFIAS DE BOAS PRATICAS DE PROGRAMAÇÃO
 
-EAFP(Easier to Ask Forgiveness than Permission)
-    "É mais fácil pedir perdão do que permissão."
-    Essa é a filosofia oficial do Python. Em vez de verificar o tipo ou o estado de um objeto antes de fazer alguma operação (o que seria "pedir permissão"), você simplesmente executa a operação e, se algo der errado, você trata o erro no except ("pede perdão").
-    Se a exceção for rara, o código roda mais rápido porque evita checagens desnecessárias a cada ciclo.
+    EAFP(Easier to Ask Forgiveness than Permission)
+        "É mais fácil pedir perdão do que permissão."
+        Essa é a filosofia oficial do Python. Em vez de verificar o tipo ou o estado de um objeto antes de fazer alguma operação (o que seria "pedir permissão"), você simplesmente executa a operação e, se algo der errado, você trata o erro no except ("pede perdão").
+        Se a exceção for rara, o código roda mais rápido porque evita checagens desnecessárias a cada ciclo.
 
-LBYL(Look Before You Leap)
-    "Olhe antes de pular."
-    Essa é a abordagem tradicional de linguagens como C ou Java. Você faz checagens preventivas (if, isinstance(), hasattr()) para garantir que tudo é seguro antes de executar a ação.
+    LBYL(Look Before You Leap)
+        "Olhe antes de pular."
+        Essa é a abordagem tradicional de linguagens como C ou Java. Você faz checagens preventivas (if, isinstance(), hasattr()) para garantir que tudo é seguro antes de executar a ação.
 
 PROGRAMAS CRIADOS
     O ideal é que o executavel (__main__) fique na pasta raiz do projeto, para, a partir dele, o Python conseguir localizar todas os módulos criados no projeto. Isso minimiza problemas envolvendo o path.
