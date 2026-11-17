@@ -43,6 +43,7 @@ DOCUMENTAÇÃO PYTHON
     https://docs.python.org/pt-br/3.16/builtins/stdtypes.html
 
 AMBIENTE VIRTUAL (venv)
+
     É como se fosse uma bolha para cada projeto.
     python -m venv nome_ambiente_virtual -> comando básico para criar um ambiente virtual. Vai executar o modulo venv como script.
 
@@ -66,4 +67,5 @@ FILOSOFIAS DE BOAS PRATICAS DE PROGRAMAÇÃO
         Essa é a abordagem tradicional de linguagens como C ou Java. Você faz checagens preventivas (if, isinstance(), hasattr()) para garantir que tudo é seguro antes de executar a ação.
 
 PROGRAMAS CRIADOS
+
     O ideal é que o executavel (__main__) fique na pasta raiz do projeto, para, a partir dele, o Python conseguir localizar todas os módulos criados no projeto. Isso minimiza problemas envolvendo o path.
