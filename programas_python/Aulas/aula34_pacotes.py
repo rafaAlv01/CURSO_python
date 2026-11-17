@@ -6,7 +6,7 @@ PACOTES(PACKAGES)
     Pacotes Regulares:
         -> São diretórios tradicionais que possuem um arquivo __init__.py. Quando importados, o Python executa o __init__.py e atribui ao atributo __file__ do módulo o caminho desse arquivo.
     
-    SOBRE __init__ :
+    SOBRE __init__ : EXPLICAÇÃO BOA EM EXERCICIOS: pacote dados, __init__.py, exercicios_modularização.py
         -> modulo usado para dizer ao python que uma pasta é um pacote.
         -> o que pode ficar dentro desse modulo:
             -> pode ser vazio.
@@ -34,6 +34,47 @@ PACOTES(PACKAGES)
             O ponto (.) em importações relativas (from . import ...) não depende do sys.path. Ele depende de uma propriedade interna do módulo chamada __package__. Por isso que mesmo se colocar no syspath o caminho do programa atual ainda não daria pra usar importações relativas.
             Quando você executa um arquivo diretamente, o Python define o __package__ dele como None.
             Como o Python não sabe qual é o "pacote pai", ele bloqueia qualquer ponto (.) imediatamente com o erro ImportError.
+    
+    Organização Arquitetural e Pacotes Executáveis:
+        -> Arquivo __main__.py
+            Se colocar um arquivo chamado __main__.py na raiz de um pacote ou diretório, o Python permitirá que todo o pacote seja executado como um script principal.
+            Ex:
+                python3 Aulas/
+                    ou
+                python3 Aulas.zip
+        
+        -> ESTRUTURA PROFISSIONAL DE PROJETOS(Layout src/)
+            Em aplicações reais e bibliotecas, é uma boa prática separar os códigos-fonte dos testes e arquivos de configuração usando um diretório src/.
+                meu_projeto/
+                ├── README.md
+                ├── setup.py ← Configuração para tornar o pacote instalável via pip
+                ├── src/
+                │ └── alocacao/ ← Código-fonte do pacote
+                │     ├── __init__.py
+                │     ├── dominio/
+                │     │   ├── __init__.py
+                │     │   └── modelo.py
+                │     └── servicos/
+                │         ├── __init__.py
+                │         └── servico.py
+                └── tests/ ← Testes automatizados fora do pacote principal
+                    ├── unit/
+                    └── e2e/
+
+    EMPACOTAMENTO, DISTRIBUIÇÃO E PyPl
+        Para compartilhar seu pacote com outros desenvolvedores ou instalá-lo no ecossistema Python:
+            -> setup.py / setuptools: é o arquivo de script utilizado para definir metadados(nome, versão, autor) e declarar quais pastas devem ser instaladas.
+                ex:
+                    from setuptools import setup, find_packages
+                    setup(
+                        name='alocacao',
+                        version='0.1',
+                        packages=find_packages(where='src'),
+                        package_dir={'': 'src'},
+                    )
+            -> PyPl(Python Package Index): É o repositório público oficial mantido pela Python Software Foundation onde dezenas de milhares de pacotes terceirizados ficam hospedados.
+            -> Pip: Ferramenta de linha de comando utilizada para baixar e instalar pacotes diretamente do PyPl ou de diretórios locais(pip install -e . instala o pacote em modo editável para desenvolvimento).
+            -> AMBIENTES VIRTUAIS(venv/pyvenv): Garantem que a instalação de dependências de um pacote fique isolada do Python do sistema operacional, evitando conflito de versões de bibliotecas entre projetos.
 """
 import sys
 import os

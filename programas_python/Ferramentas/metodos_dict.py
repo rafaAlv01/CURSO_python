@@ -35,7 +35,7 @@ print(f'Consultando/inserindo com setdefault: {pessoa.setdefault('cursos', 'Cien
 print(f'total de chaves (mostrando que setdefault inseriu): {list(pessoa.keys())}')
 print()
 
-#copy -> retorna uma cópia rasa (Shallow copy) -> não copia valores mutáveis.
+#copy -> retorna uma cópia rasa (Shallow copy) -> não copia valores mutáveis. Copy pode ser usado para contagem de produtos... criar varios produtos com um campo unico pra todos. Ex: um campo ser uma lista que retorna o id dos produtos semelhantes, sem precisar realizar uma busca. Basta atualizar essa lista sempre que um novo produto semelhante entrar no sistema.
 pessoa_mesmo_dicionario = pessoa
 print('O dicionário "pessoa_copia" é uma referencia para o mesmo dicionario "pessoa" (pessoa_mesmo_dicionario = pessoa)')
 pessoa['certificados'] = ['cert_1', 'cert_2']

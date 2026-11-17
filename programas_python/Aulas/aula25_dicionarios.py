@@ -123,6 +123,17 @@ pessoa['nova_chave'] = 'novo valor'
 print(visao_chaves) #note que a visão foi alterada.
 print()
 
+#DESEMPACOTANDO UMA LISTA DE DICIONARIOS
+produtos = [
+    {'nome': 'Produto 5', 'preco': 10.00},
+    {'nome': 'Produto 1', 'preco': 22.32},
+    {'nome': 'Produto 3', 'preco': 10.11},
+    {'nome': 'Produto 2', 'preco': 105.87},
+    {'nome': 'Produto 4', 'preco': 69.90},
+]
+print(*produtos, sep='\n')
+print()
+
 #COMO FUNCIONA EM UM FOR
 #nessa forma, não é possivel fazer "for chave, valor in pessoa" -> dá erro, pois o for só consegue iterar sobre as chaves quando aplicado diretamente a um dicionário.
 for chave in pessoa: 
@@ -164,7 +175,6 @@ d['primeiro'] = 1
 d['segundo'] = 2
 d['terceiro'] = 3
 print(d)
-
 d.move_to_end('primeiro') #move uma chave especifica para o final
 print(d)
 print()
