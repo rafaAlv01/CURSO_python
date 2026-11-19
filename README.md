@@ -42,6 +42,9 @@ DEBUGGER
 DOCUMENTAÇÃO PYTHON
     https://docs.python.org/pt-br/3.16/builtins/stdtypes.html
 
+ATALHOS VISUAL STUDIO CODE
+    https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
+
 AMBIENTE VIRTUAL (venv)
 
     É como se fosse uma bolha para cada projeto.

@@ -16,6 +16,7 @@ def ordena_2(item): #ordena por nome
     return item['sobrenome']
 
 #Dentro de sort é possivel passar uma função para ensinar a ele a ordenar.
+#Pega um dicionário(item) e ordena de acordo com o valor da chave(item['nome'])
 lista.sort(key=lambda item : item['nome']) #as funções ordena e ordena_2 podem ser substituidas pela função lambda.
 
 for item in lista:

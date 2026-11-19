@@ -93,7 +93,7 @@ produtos = [
     {'nome': 'Produto 4', 'preco': 69.90},
 ]
 
-produtos_ordenados_por_preco = sorted(produtos, key=lambda x: x['preco'])
+produtos_ordenados_por_preco = sorted(produtos, key=lambda x: x['preco']) #pega o dicionario x, e ordena de acordo com o valor da chave (x['preco'])
 print(f'Dicionario ordenado considerando uma chave em especifica:\n{produtos_ordenados_por_preco}')
 print()
 

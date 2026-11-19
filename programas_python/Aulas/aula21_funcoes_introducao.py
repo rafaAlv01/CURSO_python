@@ -44,6 +44,31 @@
                 operacoes = [somar, multiplicar]
                 print(operacoes[0](2, 3)) #note que a funcao foi tratada como uma lista.
 
+        MÓDULO functools são FERRAMENTAS para funções.
+            
+            functools.partial: (A aula no pacote Ferramentas tem exemplo)
+                -> função de ordem superior que permite realizar a aplicação parcial de funções.
+                -> recebe uma função existente juntamente com alguns argumentos posicionais ou nomeados e devolve um novo objeto chamável, um iterator.
+
+                sintaxe:
+                    from functools import partial
+                    novo_chamavel = partial(funcao_original, *args_fixos, **kwargs_fixos)
+
+                    1. funcao_origial é a funcao original que vai ser empacotada.
+                    2. *args_fixos é uma tupla contendo todos os argumentos pré-fixados.
+                    3. **kwargs_fixos é um dicionário contendo todos os argumentos nomeados pré-fixados.
+                
+                USO:
+                    Adaptação de Funções para Callbacks e critérios de ordenação:
+                        -> É muito comum precisar passar uma função para APIs que exigem chamáveis de apenas um argumento (como o parametro key de funcoes como sorted(), ou funções de callback em execução assíncrona/multiprocessamento), mas a função que você deseja reutilizar aceita dois ou mais argumentos.
+
+                            A ideia é usar partial para ficar valores de uma função, a fim de restar somente um argumento.
+                            Ex:
+
+                                funcao_aumenta_preco(valor, porcentagem) -> float
+                                funcao_modificada = partial(funcao_aumenta_preco, valor=100)
+                                    # Aqui, funcao_modificada receberá apenas um argumento, a porcentagem, porque o argumento "valor" já foi fixado.
+
 """
 
 def imprimir():
