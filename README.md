@@ -93,19 +93,29 @@ AMBIENTE VIRTUAL (venv)
 
     Problemas com segurança:
 
-        1. Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+        1. CategoryInfo : ErrodeSegurança: (:) [], PSSecurityException + FullyQualifiedErrorId : UnauthorizedAccess
 
-            Esse comando ajusta a política de execução de scripts do PowerShell para permitir que seus scripts locais rodem normalmente, mantendo uma camada de segurança contra scripts baixados da internet sem assinatura digital confiável.
+            Esse erro é bem comum em Windows 10/11, principal quando o projeto está dentro do OneDrive.
 
-            No Windows, o PowerShell vem configurado por padrão de forma restritiva (Restricted ou AllSigned em alguns cenários) para evitar que um script malicioso seja executado acidentalmente. É exatamente esse bloqueio que impediu o Activate.ps1 de rodar no seu terminal.
+            Forma de solucionar:
 
-            Partes:
-                Set-ExecutionPolicy: É o cmdlet (comando) do PowerShell usado para alterar a regra de execução de scripts (.ps1) e arquivos de configuração.
-                -ExecutionPolicy RemoteSigned: Define a regra em si:
-                    Scripts criados ou salvos localmente na sua máquina (como o Activate.ps1 dentro do seu .venv) podem ser executados sem precisar de assinatura digital.
-                    Scripts baixados da internet (que o Windows marca com o fluxo Zone.Identifier) só são executados se tiverem uma assinatura digital confiável (ou se você desbloquear o arquivo manualmente).
-                -Scope CurrentUser: Aplica essa mudança apenas para o seu usuário atual no Windows, sem exigir privilégios de Administrador e sem alterar a configuração de outros usuários ou do sistema inteiro.
-        
+                1. Ajustar a política do PowerShell para permitir scripts locais (só para seu usuário).
+
+                    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+                    Esse comando ajusta a política de execução de scripts do PowerShell para permitir que seus scripts locais rodem normalmente, mantendo uma camada de segurança contra scripts baixados da internet sem assinatura digital confiável.
+
+                    No Windows, o PowerShell vem configurado por padrão de forma restritiva (Restricted ou AllSigned em alguns cenários) para evitar que um script malicioso seja executado acidentalmente. É exatamente esse bloqueio que impediu o Activate.ps1 de rodar no seu terminal.
+
+                    Partes:
+                        Set-ExecutionPolicy: É o cmdlet (comando) do PowerShell usado para alterar a regra de execução de scripts (.ps1) e arquivos de configuração.
+                        -ExecutionPolicy RemoteSigned: Define a regra em si:
+                            Scripts criados ou salvos localmente na sua máquina (como o Activate.ps1 dentro do seu .venv) podem ser executados sem precisar de assinatura digital.
+                            Scripts baixados da internet (que o Windows marca com o fluxo Zone.Identifier) só são executados se tiverem uma assinatura digital confiável (ou se você desbloquear o arquivo manualmente).
+                        -Scope CurrentUser: Aplica essa mudança apenas para o seu usuário atual no Windows, sem exigir privilégios de Administrador e sem alterar a configuração de outros usuários ou do sistema inteiro.
+                
+                2. Ativar o ambiente usando outro terminal, como CMD ou Git Bash, onde esse bloqueio não acontece.
+            
         2. Get-ExecutionPolicy -List
 
             Ver qual política está ativa no momento.
