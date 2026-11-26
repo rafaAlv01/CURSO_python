@@ -1,0 +1,7 @@
+PHP Programando Com Orientação a Objetos
+
+Python Fluente - Luciano Ramalho
+
+Padrões de Projeto Soluções Reutilizáveis de Softwares Orientados a Objetos - Gof
+
+Patterns of Enterprise Application Architecture
