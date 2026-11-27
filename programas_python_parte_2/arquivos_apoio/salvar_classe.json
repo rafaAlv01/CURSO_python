@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "servico": "administrador",
+    "estado": false
+  },
+  {
+    "id": 2,
+    "servico": "funcionario",
+    "estado": false
+  },
+  {
+    "id": 3,
+    "servico": "usuario",
+    "estado": false
+  }
+]
